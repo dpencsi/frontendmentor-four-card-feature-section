@@ -68,13 +68,24 @@ html {
     line-height: 1.5;
 }
 
-body {
-    padding-block: var(--size-5xl);
-    padding-inline: var(--size-lg);
+main {
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+section {
+    min-height: 100vh;
 }
 
 .flow > * + * {
     margin-block-start: var(--flow-space, 1em);
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .feature-text {
@@ -85,7 +96,11 @@ body {
 
 .feature-title {
     font-size: var(--size-xl);
-    font-size: clamp(var(--size-xl), var(--size-normal) + 1.5vw, var(--size-4xl));
+    font-size: clamp(
+        var(--size-xl),
+        var(--size-normal) + 1.5vw,
+        var(--size-4xl)
+    );
     font-weight: 200;
 
     span {
@@ -159,12 +174,6 @@ body {
 
 /* 700px */
 @media (min-width: 43.75rem) {
-    body {
-        height: 100vh;
-        display: grid;
-        place-items: center;
-    }
-
     .feature-cards {
         grid-auto-flow: column;
         grid-template-columns: repeat(3, 1fr);
